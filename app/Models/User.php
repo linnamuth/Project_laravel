@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -19,8 +20,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'age',
+        'gender',
+        'phone_number',
     ];
 
     /**
@@ -41,4 +43,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function store($request , $id=null){
+        $user= $request->only([
+            'name',
+            'age',
+            'gender',
+            'phone_number',
+        ]);
+        $date = self::updateOrCreate(['id'=>$id],$user);
+        return $date;
+
+    }
+    public function events():HasMany{
+        return $this->hasMany(Event::class);
+    }
+    public function teams():HasMany{
+        return $this->hasMany(Team::class);
+    }
+    
+    public function tickets():HasMany{
+        return $this->hasMany(Ticket::class);
+    }
 }
