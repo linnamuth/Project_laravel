@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TicketRequest;
 use App\Http\Resources\TicketResource;
+use App\Http\Resources\TicketShowResource;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class TicketController extends Controller
     {
         //
         $ticket = Ticket::find($id);
-        $ticket = new TicketResource($ticket);
+        $ticket = new TicketShowResource($ticket);
         return response()->json(['success'=>true,'teamdata'=>$ticket],200);
     }
 

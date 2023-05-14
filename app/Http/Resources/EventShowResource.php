@@ -21,7 +21,8 @@ class EventShowResource extends JsonResource
             'dateEnd'=>$this->dateEnd,
             'location'=>$this->location,
             'created_by'=>$this->user,
-            'team'=>$this->teams
+            'team'=>$this->teams,
+            'ticket'=>$this->tickets,
         ];
     }
 }

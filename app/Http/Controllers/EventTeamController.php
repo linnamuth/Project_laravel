@@ -16,7 +16,6 @@ class EventTeamController extends Controller
     {
         //
         $teamEvent = EventTeam::all();
-       
         return response()->json(['success'=>true,'data'=>$teamEvent],200);
 
     }
