@@ -57,3 +57,6 @@ Route::post('/ticket',[TicketController::class,'store']);
 Route::get('/ticket/{id}',[TicketController::class,'show']);
 Route::put('/ticket/{id}',[TicketController::class,'update']);
 Route::delete('/ticket/{id}',[TicketController::class,'destroy']);
+
+//search name
+Route::get('/search/{name}',[EventController::class,'search']);

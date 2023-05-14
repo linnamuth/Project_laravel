@@ -39,7 +39,7 @@ class UserStoreRequest extends FormRequest
             ],
         'age'=>[
             'required',
-            Rule::unique('users')->ignore($this->id)
+            
         ],
         'gender'=>[
             'required',

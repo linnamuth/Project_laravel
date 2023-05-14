@@ -12,7 +12,8 @@ class Event extends Model
 
     protected $fillable = [
         'name',
-        'date',
+        'dateStart',
+        'dateEnd',
         'location',
         'user_id',
     ];
@@ -21,6 +22,8 @@ class Event extends Model
         $user= $request->only([
             'name',
             'date',
+            'dateStart',
+            'dateEnd',
             'location',
             'user_id',
         ]);

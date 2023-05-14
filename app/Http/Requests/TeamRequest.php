@@ -39,8 +39,7 @@ class TeamRequest extends FormRequest
             ],
             'member'=>[
                 'required',
-                Rule::unique('teams')->ignore($this->id),
-                ]
+            ]
                
         ];
     }

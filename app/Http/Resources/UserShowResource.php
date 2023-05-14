@@ -20,7 +20,7 @@ class UserShowResource extends JsonResource
             'age'=>$this->age,
             'gender'=>$this->gender,
             'phone_number'=>$this->phone_number,
-            'event_id'=>$this->events
+            'event'=>$this->events
         ];
     }
 }

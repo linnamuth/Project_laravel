@@ -68,4 +68,10 @@ class EventController extends Controller
         $event->delete();
         return response()->json(['success'=>true,'data'=>"delete successfully"],200);
     }
+
+    public function search($event_name){
+        
+        $event = Event::where('name','like','%'.$event_name.'%')->get();
+        return $event;
+    }
 }

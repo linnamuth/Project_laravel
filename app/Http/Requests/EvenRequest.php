@@ -38,14 +38,20 @@ class EvenRequest extends FormRequest
                 Rule::unique('events')->ignore($this->id),
                     
             ],
-            'date'=>[
+            'dateStart'=>[
+                'required',
+                Rule::unique('events')->ignore($this->id),
+             ],
+             'dateEnd'=>[
                 'required',
                 Rule::unique('events')->ignore($this->id),
              ],
             'location'=>[
                 'required',
-                Rule::unique('events')->ignore($this->id),
             ], 
+            'user_id'=>[
+                'required'
+            ]
                        
         ];
              

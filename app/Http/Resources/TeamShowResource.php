@@ -15,10 +15,11 @@ class TeamShowResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id'=>$this->id,
             'name'=>$this->name,
             'member'=>$this->member,
             'created_by'=>$this->user,
-            'event_id'=>$this->events
+            'event'=>$this->events
         ];
     }
 }

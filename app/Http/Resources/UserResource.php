@@ -20,8 +20,8 @@ class UserResource extends JsonResource
             'age'=>$this->age,
             'gender'=>$this->gender,
             'phone_number'=>$this->phone_number,
-            'event_id'=>$this->events,
-            'team_id'=>$this->teams,
+            'event'=>$this->events,
+            'team'=>$this->teams,
             'ticket'=>$this->tickets,
               
         ];
