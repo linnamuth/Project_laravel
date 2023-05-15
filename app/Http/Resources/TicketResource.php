@@ -16,7 +16,10 @@ class TicketResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'user_id'=>$this->user,
+            "timeStart"=>$this->timeStart,
+            "timeEnd"=>$this->timeEnd,
+            "user_id"=>$this->user,
+            "event_id"=>$this->event
         
         ];
     }

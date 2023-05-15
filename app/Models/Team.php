@@ -12,17 +12,19 @@ class Team extends Model
     protected $fillable = [
         'name',
         'member',
+        'gender',
         'user_id',
     ];
     public static function store($request , $id=null){
         $team= $request->only([
             'name',
             'member',
+            'gender',
             'user_id'
             
         ]);
-        $date = self::updateOrCreate(['id'=>$id],$team);
-        return $date;
+        $teams = self::updateOrCreate(['id'=>$id],$team);
+        return $teams;
 
     }
     public function user():BelongsTo{

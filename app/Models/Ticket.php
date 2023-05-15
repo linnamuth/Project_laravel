@@ -10,19 +10,19 @@ class Ticket extends Model
     use HasFactory;
 
     protected $fillable = [
+        'timeStart',
+        'timeEnd',
         'user_id',
         'event_id',
-        'date',
-        'price',
-        'zone'
+        
     ];
     public static function store($request , $id=null){
         $ticket= $request->only([
+            'timeStart',
+            'timeEnd',
             'user_id',
             'event_id',
-            'date',
-            'price',
-            'zone'
+           
             
         ]);
         $data = self::updateOrCreate(['id'=>$id],$ticket);
@@ -31,10 +31,10 @@ class Ticket extends Model
     }
 
     public function user(){
-        return $this->belongsTo(Ticket::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function events(){
+    public function event(){
         return $this->belongsTo(Event::class);
     }
     

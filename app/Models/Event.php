@@ -19,7 +19,7 @@ class Event extends Model
     ];
 
     public static function store($request , $id=null){
-        $user= $request->only([
+        $event= $request->only([
             'name',
             'date',
             'dateStart',
@@ -27,8 +27,10 @@ class Event extends Model
             'location',
             'user_id',
         ]);
-        $date = self::updateOrCreate(['id'=>$id],$user);
-        return $date;
+        $events = self::updateOrCreate(['id'=>$id],$event);
+        $teams = request('teams');
+        $events->teams()->sync($teams);
+        return $events;
 
     }
     public function user():BelongsTo{

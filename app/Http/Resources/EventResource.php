@@ -21,7 +21,7 @@ class EventResource extends JsonResource
             'dateEnd'=>$this->dateEnd,
             'location'=>$this->location,
             'created_by'=>$this->user,
-            'team'=>$this->teams,
+            'teams'=>$this->teams,
             'ticket'=>$this->tickets,
         ];
     }

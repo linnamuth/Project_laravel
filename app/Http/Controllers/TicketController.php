@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TicketRequest;
 use App\Http\Resources\TicketResource;
 use App\Http\Resources\TicketShowResource;
+use App\Http\Resources\UserResource;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
