@@ -34,21 +34,20 @@ class UserStoreRequest extends FormRequest
                 'required',
                 'min:5',
                 'max:10',
-                Rule::unique('users')->ignore($this->id),
-                    
+                Rule::unique('users')->ignore($this->id),        
             ],
-        'age'=>[
-            'required',
-            
-        ],
-        'gender'=>[
-            'required',
-            'min:4',
-        ],
-        'phone_number'=>[
-            'required' ,
-            Rule::unique('users')->ignore($this->id)
-        ]  
+            'age'=>[
+                'required', 
+                Rule::unique('users')->ignore($this->id),    
+            ],
+            'gender'=>[
+                'required',
+                'min:4',
+            ],
+            'phone_number'=>[
+                'required' ,
+                Rule::unique('users')->ignore($this->id),  
+            ]  
         ];
     }
 }

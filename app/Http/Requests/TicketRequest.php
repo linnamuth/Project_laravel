@@ -31,18 +31,11 @@ class TicketRequest extends FormRequest
     {
         return [
             //
+            'timeStart'=>'required',
+            'timeEnd'=>'required',
             'user_id'=>'required',
             'event_id'=>'required',
-            'date'=>[
-                'required',
-            ],
-            'price'=>[
-                'required',     
-            ],
-            'zone'=>[
-                'required',
-              
-            ],
+            
             
         ];
     }
